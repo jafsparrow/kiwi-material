@@ -1,0 +1,21 @@
+md-sidenav {
+  width: 200px;
+}
+
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.dash-chart{
+    background: white;
+}
+
+
+
+.login-form {
+    min-height: 600px;
+}

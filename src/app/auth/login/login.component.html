@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" class="login-form">
+    <div flex="50" >
+        <md-card>
+            <div class="login-header">
+                <h4>Login to Kiwi</h4>
+            <img src="../../assets/kiwi-icon-image.jpg" alt="" class="kiwi-icon-image">
+            </div>
+            <md-input-container  class="login-size">
+                <input mdInput placeholder="First name">
+            </md-input-container>
+            <md-input-container  class="login-size">
+                <input mdInput placeholder="Password" type="password">
+            </md-input-container>
+            <div class="login-button">
+                <button md-raised-button color="accent" (click)="login()">Login</button>
+                <div class="password-links">
+                    <a href="" class="password-help">Forgot Password</a>
+                </div>
+            </div>
+        </md-card>
+      </div>
+</div>
+
+
+

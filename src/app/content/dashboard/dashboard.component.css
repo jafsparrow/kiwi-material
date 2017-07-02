@@ -1,0 +1,15 @@
+.main-content {
+    min-height: 700px;
+}
+
+.chart-container {
+    padding: 10px;
+}
+
+.side-nav {
+    width: 200px;
+   
+    padding: 0px;
+    background: whitesmoke;
+    border-right: 2px solid darkgray;
+}
