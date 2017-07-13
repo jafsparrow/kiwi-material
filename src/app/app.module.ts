@@ -17,7 +17,8 @@ import {MdButtonModule, MdCheckboxModule, MdToolbarModule,
         MdInputModule,
         MdCardModule,
         MdProgressSpinnerModule,
-        MdMenuModule
+        MdMenuModule,
+        MdTableModule
     } from '@angular/material';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -65,6 +66,7 @@ import { ContentComponent } from './content/content.component';
     MdCardModule,
     MdProgressSpinnerModule,
     MdMenuModule,
+    MdTableModule,
     // layout module
     FlexLayoutModule,
     BrowserAnimationsModule,

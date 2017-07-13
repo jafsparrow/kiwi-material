@@ -5,10 +5,10 @@
                 <h4>Login to Kiwi</h4>
             <img src="../../assets/kiwi-icon-image.jpg" alt="" class="kiwi-icon-image">
             </div>
-            
+
             <form (ngSubmit)= "loginSubmit()" #loginForm="ngForm">
-                
-            
+
+
                 <md-input-container  class="login-size">
                     <input mdInput placeholder="Email"
                         required
@@ -25,23 +25,20 @@
                 </md-input-container>
                 <div class="login-button">
                     <button md-raised-button color="accent" type="submit"
-                        [disabled]="!loginForm.form.valid">Login</button>
-                   
-            
+                        [disabled]="!loginForm.form.valid || loading">Login</button>
+
+
                     <div class="password-links">
                         <a href="" class="password-help">Forgot Password</a>
                     </div>
                 </div>
             </form>
-            
-                <md-spinner *ngIf='loading' [strokeWidth]="5" ></md-spinner>   
-                   
-            
-            
+            <div fxLayout="row" fxLayoutAlign="space-around center" >
+                <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+            </div>
+
+
         </md-card>
 
       </div>
 </div>
-
-
-

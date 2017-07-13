@@ -1,22 +1,22 @@
-
+<!--
 <md-sidenav-container>
   <!--<md-toolbar color="primary" >
-  
+
         <!--<md-icon (click)="sidenav.toggle()" class="menu-icon">menu</md-icon>-->
         <!--<md-icon  class="menu-icon">menu</md-icon>
-        <span flex>&nbsp;</span>    
+        <span flex>&nbsp;</span>
         Kiwi Icecream
         <span class="space-filler"></span>
         test
         <md-icon>more_vert</md-icon>
 
-    
+
     </md-toolbar> -->
-    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+    <!-- <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
 
   <md-sidenav #sidenav mode="over"  opened="false" class="side-nav">
     <app-sidenavbar> </app-sidenavbar>
-  </md-sidenav>
+  </md-sidenav> -->
 
   <div class="main-content">
     <div class="chart-container">
@@ -42,8 +42,8 @@
               <a href="#"><i class="fa fa-tachometer" aria-hidden="true"> </i>  </a>
             </p>
           </div>
-        </div>  
-        <div class="quick-dash" fxFlex >      
+        </div>
+        <div class="quick-dash" fxFlex >
           <div class="quick-dash-title">
             Current Month sales
          </div>
@@ -54,7 +54,7 @@
             </p>
           </div>
         </div>
-        <div class="quick-dash" fxFlex >  
+        <div class="quick-dash" fxFlex >
           <div class="quick-dash-title">
             New orders
          </div>
@@ -65,18 +65,18 @@
             </p>
           </div>
         </div>
-          
-                         
+
+
       </div>
-      
+
         <md-list *ngFor= "let product of products">
           <md-list-item>
-             <h2 md-line>{{product.product_name}} </h2> 
+             <h2 md-line>{{product.product_name}} </h2>
              <h3 md-line>{{product.product_description}}</h3>
-          
+
           </md-list-item>
       </md-list>
-        
+
       <div fxLayout="row" fxLayout.lt-md="column" fxlayoutGap="10px" fxLayoutAlign="space-around" class="chart-sub">
         <md-card>
           <md-card-header>
@@ -98,7 +98,7 @@
               <md-card-title>Shiba Inu</md-card-title>
               <md-card-subtitle>Dog Breed</md-card-subtitle>
               </md-card-header>
-              
+
               <md-card-content>
                 <p>
                   The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -119,7 +119,7 @@
               <md-card-title>Shiba Inu</md-card-title>
               <md-card-subtitle>Dog Breed</md-card-subtitle>
               </md-card-header>
-              
+
               <md-card-content>
                 <p>
                   The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -135,7 +135,7 @@
         </div>
         <div   class="third-flex" fxFlex="25%">
             <md-card class="example-card">
-              <md-card-header>  
+              <md-card-header>
               <md-card-title>Last Quarter Sale Chart</md-card-title>
               </md-card-header>
               <chart [type]="type1" [data]="data" [options]="options"></chart>
@@ -149,6 +149,6 @@
       </div>
     </div>
   </div>
-
+<!--
 </md-sidenav-container>
-  
+   -->

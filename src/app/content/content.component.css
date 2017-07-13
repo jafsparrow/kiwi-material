@@ -3,3 +3,7 @@
     width: 100%;
     font-family: 'Roboto' Arial, Helvetica, sans-serif;
 }
+
+.main-content {
+  min-height: 600px;
+}

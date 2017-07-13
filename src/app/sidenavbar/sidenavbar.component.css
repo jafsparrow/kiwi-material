@@ -9,7 +9,7 @@ ul {
     width: 200px;
     height: 200px;
     background-image: url("../../assets/shattered.png");
-    
+
 }
 
 /*.user-detail {
@@ -31,22 +31,22 @@ ul {
     padding: 5px;
     margin-bottom: 5px;
     font-family: 'Roboto', sans-serif;
-    
+
 }
 
 .sidenav-li:hover {
-    position: relative; 
-    
+    position: relative;
+
     transition: top ease 5s;
     top: -2px;
 }
 .sidenav-li a {
     display: block;
     text-decoration: none;
-   
+
 }
 
 .sidenav-li a:hover {
     color: red;
-    
+
 }

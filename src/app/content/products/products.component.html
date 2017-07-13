@@ -1,3 +1,22 @@
 <p>
   products works!
 </p>
+<div class="mat-elevation-z3">
+  <table class="bordered">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Description</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.product_name}}</td>
+        <td>{{ product.product_description }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

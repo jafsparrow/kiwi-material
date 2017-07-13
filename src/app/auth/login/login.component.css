@@ -25,6 +25,12 @@
 }
 .password-help {
     text-decoration: none;
-    
-    
+
+
+}
+
+.login-spinner {
+  max-width: 50px;
+  
+
 }

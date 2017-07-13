@@ -1,62 +1,25 @@
-<p>
-  content works!
-</p>
 
-<form #f = "ngForm">
-    <table class="" cellspacing="0">
-      <tr>
-        <td>
-          <md-input-container class="full-width">
-            <input ngModel mdInput placeholder="Name" required>
-          </md-input-container>
-        </td>
-        <td>
-          <md-input-container class="full-width">
-            <input mdInput placeholder="SKU" required>
-          </md-input-container>
-        </td>
-     </tr>
-      <tr>
-        <td>
-          <md-input-container  >
-            <input  mdInput placeholder="Description" class="full-width">
-          </md-input-container>
-        </td>  
-      </tr> 
-      <tr>
-        <td>
-          <md-input-container>
-            <input type="number" mdInput placeholder="MRP">
-          </md-input-container>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <md-input-container>
-            <input mdInput placeholder="Note">
-          </md-input-container>
-        </td>
-      </tr>
-      <tr>
-      <td>
-        <md-input-container class="example-full-width">
-          <input  mdInput placeholder="Color" value="coloryou">
-        </md-input-container>
-      </td>
-      <td>
-        <md-input-container class="example-full-width">
-          <input mdInput placeholder="size">
-        </md-input-container>
-      </td>
-     </tr>
-     <tr>
-       <input type="text" ngModel placeholder="test box">
-     </tr>
-  
-  </table>
-  
-</form>
+<md-sidenav-container>
+  <!--<md-toolbar color="primary" >
 
-<p>
-  {{ f.value | json }}
-  </p>
+        <!--<md-icon (click)="sidenav.toggle()" class="menu-icon">menu</md-icon>-->
+        <!--<md-icon  class="menu-icon">menu</md-icon>
+        <span flex>&nbsp;</span>
+        Kiwi Icecream
+        <span class="space-filler"></span>
+        test
+        <md-icon>more_vert</md-icon>
+
+
+    </md-toolbar> -->
+    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+
+  <md-sidenav #sidenav mode="over"  opened="false" class="side-nav">
+    <app-sidenavbar> </app-sidenavbar>
+  </md-sidenav>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</md-sidenav-container>
