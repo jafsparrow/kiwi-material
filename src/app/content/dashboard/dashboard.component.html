@@ -1,11 +1,9 @@
 
-
-  
 <md-sidenav-container>
-  <md-toolbar color="primary" >
+  <!--<md-toolbar color="primary" >
   
         <!--<md-icon (click)="sidenav.toggle()" class="menu-icon">menu</md-icon>-->
-        <md-icon  class="menu-icon">menu</md-icon>
+        <!--<md-icon  class="menu-icon">menu</md-icon>
         <span flex>&nbsp;</span>    
         Kiwi Icecream
         <span class="space-filler"></span>
@@ -13,16 +11,108 @@
         <md-icon>more_vert</md-icon>
 
     
-</md-toolbar> 
+    </md-toolbar> -->
+    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
 
-  <md-sidenav #sidenav mode="side"  opened="true" class="side-nav">
+  <md-sidenav #sidenav mode="over"  opened="false" class="side-nav">
     <app-sidenavbar> </app-sidenavbar>
   </md-sidenav>
-  
+
   <div class="main-content">
     <div class="chart-container">
+      <div fxLayout="row" fxLayout.lt-md="column" fxlayoutGap="25px" fxLayoutAlign="space-around">
+        <div class="quick-dash" fxFlex >
+          <div class="quick-dash-title">
+            Products
+         </div>
+          <div class="quick-dash-numbers">
+            <h1>1034</h1>
+            <p>view more
+              <a href="#"><i class="fa fa-tachometer" aria-hidden="true"> </i>  </a>
+            </p>
+          </div>
+        </div>
+        <div class="quick-dash" fxFlex >
+          <div class="quick-dash-title">
+            Distributors
+         </div>
+          <div class="quick-dash-numbers">
+            <h1>1034</h1>
+            <p>view more
+              <a href="#"><i class="fa fa-tachometer" aria-hidden="true"> </i>  </a>
+            </p>
+          </div>
+        </div>  
+        <div class="quick-dash" fxFlex >      
+          <div class="quick-dash-title">
+            Current Month sales
+         </div>
+          <div class="quick-dash-numbers">
+            <h1>1034</h1>
+            <p>view more
+              <a href="#"><i class="fa fa-tachometer" aria-hidden="true"> </i>  </a>
+            </p>
+          </div>
+        </div>
+        <div class="quick-dash" fxFlex >  
+          <div class="quick-dash-title">
+            New orders
+         </div>
+          <div class="quick-dash-numbers">
+            <h1>1034</h1>
+            <p>view more
+              <a href="#"><i class="fa fa-tachometer" aria-hidden="true"> </i>  </a>
+            </p>
+          </div>
+        </div>
+          
+                         
+      </div>
+      
+        <md-list *ngFor= "let product of products">
+          <md-list-item>
+             <h2 md-line>{{product.product_name}} </h2> 
+             <h3 md-line>{{product.product_description}}</h3>
+          
+          </md-list-item>
+      </md-list>
+        
+      <div fxLayout="row" fxLayout.lt-md="column" fxlayoutGap="10px" fxLayoutAlign="space-around" class="chart-sub">
+        <md-card>
+          <md-card-header>
+            <md-card-title>Sales Summary</md-card-title>
+            <md-card-subtitle>See the sales summary Here</md-card-subtitle>
+          </md-card-header>
+          <md-card-content>
+            <chart [type]="type1" [data]="data" [options]="options" fxFlex></chart>
+          </md-card-content>
+          </md-card>
+        <md-card><chart [type]="type" [data]="data" [options]="options" fxFlex></chart></md-card>
+        <md-card><chart [type]="type1" [data]="data" [options]="options" fxFlex></chart></md-card>
+      </div>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" >
-        <div   class="first-flex" >
+        <div   class="first-flex" fxFlex="25%">
+            <md-card class="example-card" >
+              <md-card-header>
+              <div md-card-avatar class="example-header-image"></div>
+              <md-card-title>Shiba Inu</md-card-title>
+              <md-card-subtitle>Dog Breed</md-card-subtitle>
+              </md-card-header>
+              
+              <md-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </md-card-content>
+              <md-card-actions>
+                <button md-button>LIKE</button>
+                <button md-button>SHARE</button>
+              </md-card-actions>
+            </md-card>
+        </div>
+        <div  class="second-flex" fxFlex="25%">
             <md-card class="example-card">
               <md-card-header>
               <div md-card-avatar class="example-header-image"></div>
@@ -43,56 +133,21 @@
               </md-card-actions>
             </md-card>
         </div>
-        <div  class="second-flex">
+        <div   class="third-flex" fxFlex="25%">
             <md-card class="example-card">
-              <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
-              <md-card-title>Shiba Inu</md-card-title>
-              <md-card-subtitle>Dog Breed</md-card-subtitle>
+              <md-card-header>  
+              <md-card-title>Last Quarter Sale Chart</md-card-title>
               </md-card-header>
-              
-              <md-card-content>
-                <p>
-                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                  bred for hunting.
-                </p>
-              </md-card-content>
-              <md-card-actions>
-                <button md-button>LIKE</button>
-                <button md-button>SHARE</button>
-              </md-card-actions>
+              <chart [type]="type1" [data]="data" [options]="options"></chart>
             </md-card>
         </div>
-        <div   class="third-flex">
-            <md-card class="example-card">
-              <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
-              <md-card-title>Shiba Inu</md-card-title>
-              <md-card-subtitle>Dog Breed</md-card-subtitle>
-              </md-card-header>
-              
-              <md-card-content>
-                <p>
-                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                  bred for hunting.
-                </p>
-              </md-card-content>
-              <md-card-actions>
-                <button md-button>LIKE</button>
-                <button md-button>SHARE</button>
-              </md-card-actions>
-            </md-card>
-        </div>
-        <div   class="fouth-flex" >
-            <md-card class="example-card">
-              this will dispaly charts
+        <div   class="fouth-flex" fxFlex="25%">
+            <md-card class="example-card"  [ngClass]="card-height" >
+              <chart [type]="type" [data]="data" [options]="options"></chart>
             </md-card>
         </div>
       </div>
     </div>
-         
   </div>
 
 </md-sidenav-container>

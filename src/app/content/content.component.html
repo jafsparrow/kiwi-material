@@ -1,0 +1,62 @@
+<p>
+  content works!
+</p>
+
+<form #f = "ngForm">
+    <table class="" cellspacing="0">
+      <tr>
+        <td>
+          <md-input-container class="full-width">
+            <input ngModel mdInput placeholder="Name" required>
+          </md-input-container>
+        </td>
+        <td>
+          <md-input-container class="full-width">
+            <input mdInput placeholder="SKU" required>
+          </md-input-container>
+        </td>
+     </tr>
+      <tr>
+        <td>
+          <md-input-container  >
+            <input  mdInput placeholder="Description" class="full-width">
+          </md-input-container>
+        </td>  
+      </tr> 
+      <tr>
+        <td>
+          <md-input-container>
+            <input type="number" mdInput placeholder="MRP">
+          </md-input-container>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-input-container>
+            <input mdInput placeholder="Note">
+          </md-input-container>
+        </td>
+      </tr>
+      <tr>
+      <td>
+        <md-input-container class="example-full-width">
+          <input  mdInput placeholder="Color" value="coloryou">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="size">
+        </md-input-container>
+      </td>
+     </tr>
+     <tr>
+       <input type="text" ngModel placeholder="test box">
+     </tr>
+  
+  </table>
+  
+</form>
+
+<p>
+  {{ f.value | json }}
+  </p>

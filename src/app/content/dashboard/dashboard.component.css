@@ -1,5 +1,6 @@
 .main-content {
     min-height: 700px;
+    background: #f3f3f4;
 }
 
 .chart-container {
@@ -12,4 +13,52 @@
     padding: 0px;
     background: whitesmoke;
     border-right: 2px solid darkgray;
+}
+
+.quick-dash {
+    font-family: 'Roboto', Times, serif;
+    background: white;
+    color: #858789;
+    margin: 10px;
+    margin-bottom: 35px;
+    border-top: 2px solid #eeeeee;
+}
+
+.quick-dash-title{
+    padding: 10px;
+    text-align: center;
+    
+    font-size: 18px;
+    font-weight: 300px;
+    border-bottom: 1px solid #eeeeee;
+}
+.quick-dash-numbers {
+    
+    text-align: center;
+    
+}
+.quick-dash-numbers h1{
+    font-weight: 100;
+    margin-bottom: 0;
+}
+.quick-dash-numbers p{
+    margin-top: 0;
+    font-weight: 100;
+}
+
+
+/*.dash-chart{
+    background:white;  
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+
+}*/
+
+.card-height{
+    height: 250px;
+}
+
+.chart-sub{
+    margin-bottom: 20px;
 }

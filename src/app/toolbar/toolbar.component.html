@@ -1,11 +1,30 @@
 <md-toolbar color="primary" >
-  
-        <md-icon>menu</md-icon>
-        <span flex>&nbsp;</span>    
+        <button md-icon-button (click)="toggleSideNav()">
+            <md-icon >menu</md-icon>            
+        </button>
+        
+        <span>&nbsp;</span>    
         Kiwi Icecream
         <span class="space-filler"></span>
-        test
-        <md-icon>more_vert</md-icon>
+        
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+                <md-icon>more_vert</md-icon>
+        </button>
+        <md-menu #menu="mdMenu">
+                <button md-menu-item>
+                        <md-icon>check</md-icon>
+                        <span>Login</span>
+                </button>
+                <button md-menu-item disabled>
+                        <md-icon>voicemail</md-icon>
+                        <span>Check voicemail</span>
+                </button>
+                <button md-menu-item (click)="logout()">
+                        <md-icon>close</md-icon>
+                        <span>Logout</span>
+                </button>
+        </md-menu>
+
 
     
 </md-toolbar>

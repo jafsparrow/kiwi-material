@@ -1,8 +1,4 @@
-.sidenav-ul>li{
-   list-style: none;
-   margin: 10px;
-   border-bottom: 2px solid green;
-}
+
 
 ul {
     list-style: none;
@@ -28,4 +24,29 @@ ul {
 .sidenav-elements {
     padding: 0px;
     margin: 0px;
+}
+
+.sidenav-li{
+    background: #fefefe;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.sidenav-li:hover {
+    position: relative; 
+    
+    transition: top ease 5s;
+    top: -2px;
+}
+.sidenav-li a {
+    display: block;
+    text-decoration: none;
+   
+}
+
+.sidenav-li a:hover {
+    color: red;
+    
 }
