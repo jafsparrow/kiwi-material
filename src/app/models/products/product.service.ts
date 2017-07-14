@@ -45,7 +45,7 @@ export class ProductService {
     console.log('before adding new prodcut');
     let newproduct = {
                   "sku": "1298323294",
-                  "product_name": "Producttest",
+                  "product_name": "",
                   "product_description": "Mexican 3 awesomo",
                   "msrp": 120,
                   "available_size": [

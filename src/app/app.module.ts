@@ -38,6 +38,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthenticationService } from './auth/_services/authentication.service';
 import { ProductService } from './models/products/product.service';
 import { AuthGuard } from './auth/_guard/auth.guard';
+import { ProductaddComponent } from './content/products/productadd/productadd.component';
 
 
 
@@ -50,7 +51,8 @@ import { AuthGuard } from './auth/_guard/auth.guard';
     DashboardComponent,
     ProductsComponent,
     ContentComponent,
-    ProductcategoriesComponent
+    ProductcategoriesComponent,
+    ProductaddComponent
   ],
   imports: [
     BrowserModule,
