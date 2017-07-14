@@ -21,7 +21,16 @@ const appRoutes: Routes = [
     children: [
       { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
       {path: 'dashboard', component:DashboardComponent },
-      {path: 'products', component:ProductsComponent },
+      {path: 'products', component:ProductsComponent
+        // children: [
+        //   {path: '',   redirectTo: 'list', pathMatch: 'full'},
+        //   {path: 'list', component:ProductList},
+        //   {path: 'product/:id', component:ProductList},
+        //   {path: 'product/:id/edit', component:ProductList},
+        //   {path: 'id/:id/delete', component:ProductList},
+        //   {path: 'list', component:ProductList},
+        // ]
+      },
 
     ],
     canActivate: [

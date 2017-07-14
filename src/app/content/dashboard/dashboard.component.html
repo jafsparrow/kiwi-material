@@ -1,24 +1,7 @@
-<!--
-<md-sidenav-container>
-  <!--<md-toolbar color="primary" >
-
-        <!--<md-icon (click)="sidenav.toggle()" class="menu-icon">menu</md-icon>-->
-        <!--<md-icon  class="menu-icon">menu</md-icon>
-        <span flex>&nbsp;</span>
-        Kiwi Icecream
-        <span class="space-filler"></span>
-        test
-        <md-icon>more_vert</md-icon>
-
-
-    </md-toolbar> -->
-    <!-- <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
-
-  <md-sidenav #sidenav mode="over"  opened="false" class="side-nav">
-    <app-sidenavbar> </app-sidenavbar>
-  </md-sidenav> -->
-
   <div class="main-content">
+    <button (click)= "addNewProduct()">Add the product</button>
+
+
     <div class="chart-container">
       <div fxLayout="row" fxLayout.lt-md="column" fxlayoutGap="25px" fxLayoutAlign="space-around">
         <div class="quick-dash" fxFlex >
@@ -73,9 +56,8 @@
           <md-list-item>
              <h2 md-line>{{product.product_name}} </h2>
              <h3 md-line>{{product.product_description}}</h3>
-
           </md-list-item>
-      </md-list>
+        </md-list>
 
       <div fxLayout="row" fxLayout.lt-md="column" fxlayoutGap="10px" fxLayoutAlign="space-around" class="chart-sub">
         <md-card>
@@ -142,13 +124,10 @@
             </md-card>
         </div>
         <div   class="fouth-flex" fxFlex="25%">
-            <md-card class="example-card"  [ngClass]="card-height" >
+            <md-card class="example-card">
               <chart [type]="type" [data]="data" [options]="options"></chart>
             </md-card>
         </div>
       </div>
     </div>
   </div>
-<!--
-</md-sidenav-container>
-   -->

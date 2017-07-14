@@ -8,10 +8,10 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
- 
+
   type = 'line';
   type1= 'bar';
-  
+
   data = {
     labels: ["JAN", "FEB", "MAR", 'APR', 'MAY', 'JUNE'],
     datasets: [
@@ -63,6 +63,15 @@ products: any;
     return this.sanitizeUrl(url);
   }
 
-
+  addNewProduct(){
+    console.log('calling the add product from dashboard component');
+    this.productService.addProduct('hello world')
+      .subscribe(
+        result => {
+        console.log(result);
+        console.log('new product added');
+      },
+        error => { console.log('from error block' + error)});
+  }
 
 }

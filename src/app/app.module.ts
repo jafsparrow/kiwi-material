@@ -29,15 +29,16 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './content/dashboard/dashboard.component';
+import { ProductsComponent } from './content/products/products.component';
+import { ContentComponent } from './content/content.component';
+import { ProductcategoriesComponent } from './content/products/productcategories/productcategories.component';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 // auth service module.
 import { AuthenticationService } from './auth/_services/authentication.service';
 import { ProductService } from './models/products/product.service';
 import { AuthGuard } from './auth/_guard/auth.guard';
-import { ProductsComponent } from './content/products/products.component';
-import { ContentComponent } from './content/content.component';
-import { ProductcategoriesComponent } from './content/products/productcategories/productcategories.component';
+
 
 
 @NgModule({
@@ -46,8 +47,8 @@ import { ProductcategoriesComponent } from './content/products/productcategories
     ToolbarComponent,
     SidenavbarComponent,
     LoginComponent,
-     DashboardComponent,
-     ProductsComponent,
+    DashboardComponent,
+    ProductsComponent,
     ContentComponent,
     ProductcategoriesComponent
   ],
@@ -55,7 +56,7 @@ import { ProductcategoriesComponent } from './content/products/productcategories
     BrowserModule,
     FormsModule,
     // local modules.
-    //ContentModule,
+
     AppRoutingModule,
     // material desing modules
     MdButtonModule,

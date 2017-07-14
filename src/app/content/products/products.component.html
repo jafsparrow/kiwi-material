@@ -13,7 +13,7 @@
           <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
       </div>
 
-      <table class="mdl-data-table local_class">
+      <table *ngIf='!loading' class="mdl-data-table local_class">
         <thead>
           <tr>
             <th class="">Product Name</th>
