@@ -11,12 +11,15 @@ export class ProductsComponent implements OnInit {
   products = [];
   displayedColumns = ['userId', 'userName', 'progress', 'color'];
   dataSource: any | null;
+  loading = false;
 
   constructor(private _productservice: ProductService) { }
 
   ngOnInit() {
+    this.loading = true;
     this._productservice.getProducts()
         .subscribe(result => {
+          this.loading = false;
           this.products = result;
           this.dataSource = result;
        });

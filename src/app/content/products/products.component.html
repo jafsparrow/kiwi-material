@@ -1,22 +1,50 @@
-<p>
-  products works!
-</p>
-<div class="mat-elevation-z3">
-  <table class="bordered">
-    <thead>
-      <tr>
-        <th>Product Name</th>
-        <th>Product Description</th>
-      </tr>
+<div class="container">
+  <md-card>
 
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{ product.product_name}}</td>
-        <td>{{ product.product_description }}</td>
-      </tr>
-    </tbody>
-  </table>
+<md-tab-group>
 
+  <md-tab label="Products">
+    <md-card>
+      <md-card-title>Available Products
+        <button md-raised-button routerLink="." color="accent">Add New Product</button>
+      </md-card-title>
+
+      <div fxLayout="row" fxLayoutAlign="space-around center" >
+          <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+      </div>
+
+      <table class="mdl-data-table local_class">
+        <thead>
+          <tr>
+            <th class="">Product Name</th>
+            <th>Product Description</th>
+            <th>Availabilty</th>
+            <th>Sku</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              <a href="#">{{ product.product_name}}</a>
+            </td>
+            <td>{{ product.product_description }}</td>
+            <td>{{ product.product_available }}</td>
+            <td>{{ product.sku }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-card>
+
+  </md-tab>
+  <md-tab label="Categories">
+    <app-productcategories></app-productcategories>
+  </md-tab>
+</md-tab-group>
+
+
+
+
+  </md-card>
 
 </div>

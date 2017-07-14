@@ -18,7 +18,8 @@ import {MdButtonModule, MdCheckboxModule, MdToolbarModule,
         MdCardModule,
         MdProgressSpinnerModule,
         MdMenuModule,
-        MdTableModule
+        MdTableModule,
+        MdTabsModule
     } from '@angular/material';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -36,6 +37,7 @@ import { ProductService } from './models/products/product.service';
 import { AuthGuard } from './auth/_guard/auth.guard';
 import { ProductsComponent } from './content/products/products.component';
 import { ContentComponent } from './content/content.component';
+import { ProductcategoriesComponent } from './content/products/productcategories/productcategories.component';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { ContentComponent } from './content/content.component';
     LoginComponent,
      DashboardComponent,
      ProductsComponent,
-    ContentComponent
+    ContentComponent,
+    ProductcategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { ContentComponent } from './content/content.component';
     MdProgressSpinnerModule,
     MdMenuModule,
     MdTableModule,
+    MdTabsModule,
     // layout module
     FlexLayoutModule,
     BrowserAnimationsModule,

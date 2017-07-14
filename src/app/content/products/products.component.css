@@ -1,0 +1,12 @@
+.container {
+  margin: 20px;
+}
+
+.local_class {
+  text-align: left;
+  width: 100%;
+}
+
+th td {
+  text-align: center !important;
+}
