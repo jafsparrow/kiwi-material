@@ -9,6 +9,8 @@ import { DashboardComponent } from '../content/dashboard/dashboard.component';
 import { AppComponent } from '../app.component';
 import { ContentComponent } from '../content/content.component';
 import { ProductsComponent } from '../content/products/products.component';
+import { ProductlistComponent } from '../content/products/productlist/productlist.component';
+import { ProductaddComponent } from '../content/products/productadd/productadd.component';
 
 // other services and guards
 import { AuthGuard } from '../auth/_guard/auth.guard';
@@ -21,15 +23,15 @@ const appRoutes: Routes = [
     children: [
       { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
       {path: 'dashboard', component:DashboardComponent },
-      {path: 'products', component:ProductsComponent
-        // children: [
-        //   {path: '',   redirectTo: 'list', pathMatch: 'full'},
-        //   {path: 'list', component:ProductList},
-        //   {path: 'product/:id', component:ProductList},
-        //   {path: 'product/:id/edit', component:ProductList},
-        //   {path: 'id/:id/delete', component:ProductList},
-        //   {path: 'list', component:ProductList},
-        // ]
+      {path: 'products', component:ProductsComponent,
+        children: [
+          {path: '',   redirectTo: 'list', pathMatch: 'full'},
+          {path: 'list', component:ProductlistComponent},
+          {path: 'add', component:ProductaddComponent},
+          // {path: 'product/:id/edit', component:ProductList},
+          // {path: 'id/:id/delete', component:ProductList},
+          // {path: 'list', component:ProductList},
+        ]
       },
 
     ],

@@ -1,0 +1,10 @@
+.card-image {
+  /*max-height: 150px;*/
+  min-height: 150px;
+  /* needs to be important because md-card also sets it that way */
+}
+
+.product-card {
+  padding: 5px;
+  margin-bottom: 5px;
+}

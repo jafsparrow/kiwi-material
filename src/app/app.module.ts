@@ -19,7 +19,9 @@ import {MdButtonModule, MdCheckboxModule, MdToolbarModule,
         MdProgressSpinnerModule,
         MdMenuModule,
         MdTableModule,
-        MdTabsModule
+        MdTabsModule,
+        MdSelectModule
+
     } from '@angular/material';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -39,6 +41,7 @@ import { AuthenticationService } from './auth/_services/authentication.service';
 import { ProductService } from './models/products/product.service';
 import { AuthGuard } from './auth/_guard/auth.guard';
 import { ProductaddComponent } from './content/products/productadd/productadd.component';
+import { ProductlistComponent } from './content/products/productlist/productlist.component';
 
 
 
@@ -52,7 +55,8 @@ import { ProductaddComponent } from './content/products/productadd/productadd.co
     ProductsComponent,
     ContentComponent,
     ProductcategoriesComponent,
-    ProductaddComponent
+    ProductaddComponent,
+    ProductlistComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,8 @@ import { ProductaddComponent } from './content/products/productadd/productadd.co
     MdMenuModule,
     MdTableModule,
     MdTabsModule,
+    MdSelectModule,
+
     // layout module
     FlexLayoutModule,
     BrowserAnimationsModule,

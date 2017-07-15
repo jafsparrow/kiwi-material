@@ -9,8 +9,6 @@ import { ProductService } from '../../models/products/product.service';
 })
 export class ProductsComponent implements OnInit {
   products = [];
-  displayedColumns = ['userId', 'userName', 'progress', 'color'];
-  dataSource: any | null;
   loading = false;
 
   constructor(private _productservice: ProductService) { }
@@ -21,7 +19,7 @@ export class ProductsComponent implements OnInit {
         .subscribe(result => {
           this.loading = false;
           this.products = result;
-          this.dataSource = result;
+
        });
   }
 

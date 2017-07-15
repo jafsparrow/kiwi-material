@@ -1,38 +1,56 @@
-<p>
-  productadd works!
-</p>
 <md-card>
-  <form >
-    <md-input-container class="example-full-width">
-    <input mdInput placeholder="Product Name">
-  </md-input-container>
+  <md-card-title>Add a New Product</md-card-title>
+  <div style="font-family: 'roboto'; color: red;">{{ error }}</div>
+  <form #productAddform="ngForm" (ngSubmit)="addProduct(productAddform.value)">
 
-  <md-input-container class="example-full-width">
-      <input mdInput placeholder="description">
-    </md-input-container>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutAlign="space-between" fxLayoutWrap>
+        <div fxFlex class="product-form-section">
+            <div fxLayout="column">
+              <md-input-container  >
+                <input mdInput placeholder="Product Name" name="product_name" ngModel required>
+              </md-input-container>
 
-    <md-input-container class="example-full-width">
-      <input mdInput placeholder="First name">
-    </md-input-container>
+              <md-input-container  >
+                  <input mdInput placeholder="Barcode" name="product_barcode" ngModel required>
+              </md-input-container>
+              <md-input-container  >
+                  <input mdInput placeholder="Image Link" name="picture_url" ngModel required>
+              </md-input-container>
+              <md-select placeholder="Favorite food">
+                <md-option *ngFor="let food of foods" value="food.value">
+                  {{ food.viewValue }}
+                </md-option>
+              </md-select>
+            </div>
+        </div>
 
-    <md-input-container class="example-full-width">
-      <input mdInput placeholder="SKU">
-    </md-input-container>
 
-    <md-input-container class="example-full-width">
-      <input mdInput placeholder="MRP" type="number">
-    </md-input-container>
-    <p>
+        <div fxFlex class="product-form-section">
+          <div fxLayout="column">
+            <md-input-container >
+              <textarea mdInput placeholder="Product Description" name="product_description"></textarea>
+            </md-input-container>
+            <md-input-container>
+              <input mdInput placeholder="SKU">
+            </md-input-container>
 
-      <md-select placeholder="Favorite food"  name="food">
-        <md-option>
-          option 1
-        </md-option>
-        <md-option>
-          option 2
-        </md-option>
-      </md-select>
-    </p>
-  </form>
+            <md-input-container >
+              <input mdInput placeholder="MRP" type="number">
+            </md-input-container>
+
+
+          </div>
+
+        </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end">
+
+        <button [disabled]="!productAddform.form.valid" md-raised-button type="submit" color="accent">Submit</button>
+
+  </div>
+</form>
+
+<!-- {{ productAddform | json}} -->
 
 </md-card>

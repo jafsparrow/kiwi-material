@@ -63,15 +63,15 @@ products: any;
     return this.sanitizeUrl(url);
   }
 
-  addNewProduct(){
-    console.log('calling the add product from dashboard component');
-    this.productService.addProduct('hello world')
-      .subscribe(
-        result => {
-        console.log(result);
-        console.log('new product added');
-      },
-        error => { console.log('from error block' + error)});
-  }
+  // addNewProduct(){
+  //   console.log('calling the add product from dashboard component');
+  //   this.productService.addProduct('hello world')
+  //     .subscribe(
+  //       result => {
+  //       console.log(result);
+  //       console.log('new product added');
+  //     },
+  //       error => { console.log('from error block' + error)});
+  // }
 
 }

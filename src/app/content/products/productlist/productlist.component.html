@@ -1,0 +1,77 @@
+<md-card>
+
+<md-tab-group>
+  <md-tab label="Products">
+    <md-card>
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutWrap>
+          <md-card-title fxFlex="50%">Available Products</md-card-title>
+          <form >
+            <md-input-container>
+
+                  <input mdInput placeholder="Search for product"
+                      name="search_input">
+                  <!--<md-hint>Please Enter your email</md-hint>-->
+                  <!-- <md-error>Email is required.</md-error> -->
+            </md-input-container>
+
+          </form>
+          <div class="">
+            <button (click)="goToAddProduct()" md-raised-button color="accent">Add New Product</button>
+
+          </div>
+
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-around center" >
+          <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+      </div>
+
+      <!-- <table *ngIf='!loading' class="mdl-data-table local_class">
+        <thead>
+          <tr>
+            <th class="">Product Name</th>
+            <th>Product Description</th>
+            <th>Availabilty</th>
+            <th>Sku</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              <a href="#">{{ product.product_name}}</a>
+            </td>
+            <td>{{ product.product_description }}</td>
+            <td>{{ product.product_available }}</td>
+            <td>{{ product.sku }}</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <div *ngIf='!loading' fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start" fxLayoutWrap>
+        <div *ngFor="let product of products" class="product-card" fxFlex="20%" >
+          <md-card class="example-card">
+            <md-card-header>
+              <md-card-title>{{ product.product_name}}</md-card-title>
+              <md-card-subtitle>{{ product.product_available }}</md-card-subtitle>
+            </md-card-header>
+            <img md-card-image src="{{ product.picture_url}}" class="card-image">
+            <md-card-content>
+              <p>
+                {{ product.product_description }}
+              </p>
+            </md-card-content>
+            <md-card-actions>
+              <button md-button>VIEW</button>
+              <button md-button>EDIT</button>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </div>
+    </md-card>
+
+  </md-tab>
+  <md-tab label="Categories">
+    <app-productcategories></app-productcategories>
+  </md-tab>
+</md-tab-group>

@@ -31,7 +31,24 @@ export class ProductService {
            });
    }
 
-   addProduct(product?: string): Observable<any>{
+
+// to implement faster data load - load one time and use it different component.
+//two ways to do it. either cash it or use shared service and instantiate only one time.
+// example of cashing. here cashdata is just an array, if it is existing it creates observatle
+// from the array of data which will prevent the http call and makes thigs faster.
+// getData() {
+//   if (this.cachedData) {
+//     return Observable.of(this.cachedData);
+//   } else {
+//     return this.http.get(...)
+//           .map(res => res.json())
+//           .do((data) => {
+//             this.cachedData = data;
+//           });
+//   }
+// }
+
+   addProduct(newproduct?: any): Observable<any>{
      // add post request with all the options and return  observablee.
 
     //  let options = new RequestOptions({
@@ -42,30 +59,30 @@ export class ProductService {
   	// 		.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
     // to mock the add test.
-    console.log('before adding new prodcut');
-    let newproduct = {
-                  "sku": "1298323294",
-                  "product_name": "",
-                  "product_description": "Mexican 3 awesomo",
-                  "msrp": 120,
-                  "available_size": [
-                      1,
-                      2
-                  ],
-                  "available_colors": [
-                      2
-                  ],
-                  "discount": 1,
-                  "product_available": 0,
-                  "discount_available": 1,
-                  "picture_url": "http://bakedbree.com/wp-content/uploads/2010/09/vanilla-ice-cream_12.jpg",
-                  "ranking": 1,
-                  "note": "1",
-                  "manufacturer_id": 1,
-                  "categories": [
-                      1
-                  ]
-              }
+    // console.log('before adding new prodcut');
+    // let newproduct = {
+    //               "sku": "1298323294",
+    //               "product_name": "",
+    //               "product_description": "Mexican 3 awesomo",
+    //               "msrp": 120,
+    //               "available_size": [
+    //                   1,
+    //                   2
+    //               ],
+    //               "available_colors": [
+    //                   2
+    //               ],
+    //               "discount": 1,
+    //               "product_available": 0,
+    //               "discount_available": 1,
+    //               "picture_url": "http://bakedbree.com/wp-content/uploads/2010/09/vanilla-ice-cream_12.jpg",
+    //               "ranking": 1,
+    //               "note": "1",
+    //               "manufacturer_id": 1,
+    //               "categories": [
+    //                   1
+    //               ]
+    //           }
         const headers = new Headers({ 'Content-Type': 'application/json',
                                      'Authorization': 'Bearer ' + this.currentUser.token });
         const options = new RequestOptions({ headers: headers });
