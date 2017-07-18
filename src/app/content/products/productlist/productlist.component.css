@@ -4,7 +4,8 @@
   /* needs to be important because md-card also sets it that way */
 }
 
-.product-card {
+.product-card-container{
   padding: 5px;
   margin-bottom: 5px;
+
 }

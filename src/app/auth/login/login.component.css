@@ -1,3 +1,4 @@
+
 .login-size{
     width: 100%;
 }
@@ -22,15 +23,17 @@
 
 .password-links{
     margin-top: 20px;
+
 }
 .password-help {
     text-decoration: none;
-
-
+    color: blue;
 }
 
 .login-spinner {
   max-width: 50px;
-  
+}
 
+.error-message {
+  color: red;
 }

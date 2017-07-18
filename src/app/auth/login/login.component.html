@@ -4,7 +4,15 @@
             <div class="login-header">
                 <h4>Login to Kiwi</h4>
             <img src="assets/kiwi-icon-image.jpg" alt="" class="kiwi-icon-image">
+
+            <div *ngIf="!loginStatus" class="error-message">
+              <p>
+                login failed, please try again
+              </p>
             </div>
+            </div>
+
+
 
             <form (ngSubmit)= "loginSubmit()" #loginForm="ngForm">
 

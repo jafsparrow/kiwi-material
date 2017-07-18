@@ -39,9 +39,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 // auth service module.
 import { AuthenticationService } from './auth/_services/authentication.service';
 import { ProductService } from './models/products/product.service';
+import { CategoryService } from './models/catogories/category.service';
 import { AuthGuard } from './auth/_guard/auth.guard';
 import { ProductaddComponent } from './content/products/productadd/productadd.component';
 import { ProductlistComponent } from './content/products/productlist/productlist.component';
+import { CategoryComponent } from './content/products/productcategories/category/category.component';
 
 
 
@@ -56,7 +58,8 @@ import { ProductlistComponent } from './content/products/productlist/productlist
     ContentComponent,
     ProductcategoriesComponent,
     ProductaddComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +95,8 @@ import { ProductlistComponent } from './content/products/productlist/productlist
     // auth service
     AuthenticationService,
     AuthGuard,
-    ProductService
+    ProductService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

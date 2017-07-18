@@ -4,7 +4,7 @@
   <md-tab label="Products">
     <md-card>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutWrap>
-          <md-card-title fxFlex="50%">Available Products</md-card-title>
+          <md-card-title fxFlex="50%">Available Products {{ products.length}}</md-card-title>
           <form >
             <md-input-container>
 
@@ -49,14 +49,14 @@
       </table> -->
 
       <div *ngIf='!loading' fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start" fxLayoutWrap>
-        <div *ngFor="let product of products" class="product-card" fxFlex="20%" >
-          <md-card class="example-card">
+        <div *ngFor="let product of products" class="product-card-container" fxFlex="20%" >
+          <md-card class="product-card">
             <md-card-header>
               <md-card-title>{{ product.product_name}}</md-card-title>
               <md-card-subtitle>{{ product.product_available }}</md-card-subtitle>
             </md-card-header>
             <img md-card-image src="{{ product.picture_url}}" class="card-image">
-            <md-card-content>
+            <md-card-content >
               <p>
                 {{ product.product_description }}
               </p>

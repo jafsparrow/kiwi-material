@@ -29,12 +29,12 @@ export class AuthenticationService {
               this.token = true;
               // store jwt and username in the local storage.
               localStorage.setItem('currentUser', JSON.stringify({email: email, token: token}));
-              
+
               return true;
-          }else {
-              console.log('in the fail block');
-              return false;
-            }
+            }else {
+                console.log('in the fail block');
+                return false;
+              }
 
           });
 
@@ -46,6 +46,6 @@ export class AuthenticationService {
     this.token = false;
     localStorage.removeItem('currentUser');
   }
-  
+
 
 }
