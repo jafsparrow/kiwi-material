@@ -3,6 +3,12 @@
 ul {
     list-style: none;
     padding: 0px;
+    margin: 0px;
+    padding: 5px 15px 5px 15px;
+}
+
+li {
+    cursor: pointer;
 }
 
 .user-info{
@@ -18,7 +24,7 @@ ul {
 
 .user-detail img {
     border-radius: 50%;
-    max-width: 70px;
+
 }
 
 .sidenav-elements {
@@ -34,19 +40,17 @@ ul {
 
 }
 
-.sidenav-li:hover {
+/*.sidenav-li:hover {
     position: relative;
 
     transition: top ease 5s;
     top: -2px;
-}
-.sidenav-li a {
+}*/
+/*.sidenav-li a {
     display: block;
     text-decoration: none;
+}*/
 
-}
-
-.sidenav-li a:hover {
+/*.sidenav-li a:hover {
     color: red;
-
-}
+}*/

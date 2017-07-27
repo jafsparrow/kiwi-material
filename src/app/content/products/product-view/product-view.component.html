@@ -1,0 +1,14 @@
+  <md-card class="product-card">
+    <md-card-header>
+      <md-card-title>{{ data.product_name}}</md-card-title>
+      <md-card-title>Available <strong>30</strong></md-card-title>
+      <md-card-subtitle>{{ data.product_available }}</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="{{ data.picture_url}}" class="card-image">
+    <md-card-content >
+      <p>
+        {{ data.product_description }}
+      </p>
+    </md-card-content>
+
+  </md-card>

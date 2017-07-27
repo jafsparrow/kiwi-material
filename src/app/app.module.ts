@@ -20,7 +20,8 @@ import {MdButtonModule, MdCheckboxModule, MdToolbarModule,
         MdMenuModule,
         MdTableModule,
         MdTabsModule,
-        MdSelectModule
+        MdSelectModule,
+        MdDialogModule
 
     } from '@angular/material';
 
@@ -44,6 +45,8 @@ import { AuthGuard } from './auth/_guard/auth.guard';
 import { ProductaddComponent } from './content/products/productadd/productadd.component';
 import { ProductlistComponent } from './content/products/productlist/productlist.component';
 import { CategoryComponent } from './content/products/productcategories/category/category.component';
+import { ProductViewComponent } from './content/products/product-view/product-view.component';
+import { ProductEditComponent } from './content/products/product-edit/product-edit.component';
 
 
 
@@ -59,7 +62,9 @@ import { CategoryComponent } from './content/products/productcategories/category
     ProductcategoriesComponent,
     ProductaddComponent,
     ProductlistComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductViewComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,7 @@ import { CategoryComponent } from './content/products/productcategories/category
     MdTableModule,
     MdTabsModule,
     MdSelectModule,
-
+    MdDialogModule,
     // layout module
     FlexLayoutModule,
     BrowserAnimationsModule,

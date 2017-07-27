@@ -11,6 +11,8 @@ import { ContentComponent } from '../content/content.component';
 import { ProductsComponent } from '../content/products/products.component';
 import { ProductlistComponent } from '../content/products/productlist/productlist.component';
 import { ProductaddComponent } from '../content/products/productadd/productadd.component';
+import { ProductViewComponent } from '../content/products/product-view/product-view.component';
+import { ProductEditComponent } from '../content/products/product-edit/product-edit.component';
 
 // other services and guards
 import { AuthGuard } from '../auth/_guard/auth.guard';
@@ -28,8 +30,8 @@ const appRoutes: Routes = [
           {path: '',   redirectTo: 'list', pathMatch: 'full'},
           {path: 'list', component:ProductlistComponent},
           {path: 'add', component:ProductaddComponent},
-          // {path: 'product/:id/edit', component:ProductList},
-          // {path: 'id/:id/delete', component:ProductList},
+          {path: 'edit/:id', component:ProductEditComponent },
+          {path: 'view/:id', component:ProductViewComponent},
           // {path: 'list', component:ProductList},
         ]
       },
