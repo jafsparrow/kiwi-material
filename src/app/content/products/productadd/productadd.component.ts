@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 //local service
-import { ProductService } from '../../../models/products/product.service';
+import { ProductService } from '../../../shared/services/product.service';
 
 @Component({
   selector: 'app-productadd',

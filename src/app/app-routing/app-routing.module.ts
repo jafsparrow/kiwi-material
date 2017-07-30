@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
 // local components
-import { ToolbarComponent } from '../toolbar/toolbar.component';
-import { SidenavbarComponent } from '../sidenavbar/sidenavbar.component';
-import { LoginComponent } from '../auth/login/login.component';
+import { ToolbarComponent } from '../shared/components/toolbar/toolbar.component';
+import { SidenavbarComponent } from '../shared/components/sidenavbar/sidenavbar.component';
+import { LoginComponent } from '../login/login.component';
 import { DashboardComponent } from '../content/dashboard/dashboard.component';
 import { AppComponent } from '../app.component';
 import { ContentComponent } from '../content/content.component';
@@ -15,7 +17,7 @@ import { ProductViewComponent } from '../content/products/product-view/product-v
 import { ProductEditComponent } from '../content/products/product-edit/product-edit.component';
 
 // other services and guards
-import { AuthGuard } from '../auth/_guard/auth.guard';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

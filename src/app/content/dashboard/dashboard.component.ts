@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../models/products/product.service';
+import { ProductService } from '../../shared/services/product.service';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -49,14 +49,14 @@ products: any;
    }
 
   ngOnInit() {
-        this.productService.getProducts()
-      .subscribe(result => {
-        // console.log(result.length);
-        for ( let i = 0; i < result.length; i++) {
-          this.products = result;
-          //console.log(this.product);
-        }
-       });
+    // this.productService.getProducts()
+    //   .subscribe(result => {
+    //     // console.log(result.length);
+    //     for ( let i = 0; i < result.length; i++) {
+    //       this.products = result;
+    //       //console.log(this.product);
+    //     }
+    //    });
   }
 
   sanitizeUrl(url: string) {

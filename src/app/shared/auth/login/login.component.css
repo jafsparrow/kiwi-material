@@ -1,0 +1,39 @@
+
+.login-size{
+    width: 100%;
+}
+
+.login-header {
+    text-align: center;
+}
+.kiwi-icon-image{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    box-shadow: 2cm;
+}
+
+.login-form {
+    margin: 70px auto;
+}
+.login-button{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.password-links{
+    margin-top: 20px;
+
+}
+.password-help {
+    text-decoration: none;
+    color: blue;
+}
+
+.login-spinner {
+  max-width: 50px;
+}
+
+.error-message {
+  color: red;
+}

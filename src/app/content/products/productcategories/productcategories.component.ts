@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // local services
-import { CategoryService } from '../../../models/catogories/category.service';
+import { CategoryService } from '../../../shared/services/category.service';
 @Component({
   selector: 'app-productcategories',
   templateUrl: './productcategories.component.html',

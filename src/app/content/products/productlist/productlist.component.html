@@ -23,7 +23,8 @@
       </div>
 
       <div fxLayout="row" fxLayoutAlign="space-around center" >
-          <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+          <md-spinner *ngIf='loading && !errorOnfetch' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+          <md-error *ngIf='errorOnfetch'>Oops, Couldn't connect to server.! check your connection</md-error>
       </div>
 
       <!-- <table *ngIf='!loading' class="mdl-data-table local_class">

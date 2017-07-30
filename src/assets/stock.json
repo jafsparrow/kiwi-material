@@ -1,0 +1,52 @@
+
+[
+    {    "id": "1",
+        "unit_size": "15",
+        "uinit_price": "20",
+        "quantity_per_unit": "2",
+        "unit_weight": "5",
+        "units_in_test_stock": "10",
+        "units_on_order": "3",
+        "reorder_level": "10",
+        "products": [
+            
+                    {
+                    "sku":"10",
+                    "product_name": "11"
+                    },
+                    {
+                    "id":"12",
+                    "cat": "11"
+                    }
+            
+            
+                ]   
+
+
+    },
+    {
+        "id": "2",
+        "unit_size": "15",
+        "uinit_price": "20",
+        "quantity_per_unit": "2",
+        "unit_weight": "5",
+        "units_in_stock": "10",
+        "units_on_order": "3",
+        "reorder_level": "10",
+        "products": [
+            
+                    {
+                    "id":"10",
+                    "cat": "11"
+                    },
+                    {
+                    "id":"12",
+                    "cat": "11"
+                    }
+            
+            
+                ]  
+
+
+    } 
+]

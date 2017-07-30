@@ -1,0 +1,51 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" class="login-form">
+    <div flex="50" >
+        <md-card>
+            <div class="login-header">
+                <h4>Login to Kiwi</h4>
+            <img src="assets/kiwi-icon-image.jpg" alt="" class="kiwi-icon-image">
+
+            <div *ngIf="!loginStatus" class="error-message">
+              <p>
+                login failed, please try again
+              </p>
+            </div>
+            </div>
+
+
+
+            <form (ngSubmit)= "loginSubmit()" #loginForm="ngForm">
+
+                <md-input-container  class="login-size">
+                    <input mdInput placeholder="Email"
+                        required
+                        name="email" [(ngModel)]="email" >
+                    <!--<md-hint>Please Enter your email</md-hint>-->
+                    <md-error>Email is required.</md-error>
+                </md-input-container>
+                <md-input-container  class="login-size">
+                    <input mdInput placeholder="Password" type="password"
+                        required
+                        name="password" [(ngModel)]='password'>
+                    <!--<md-hint>Please Enter the password</md-hint>-->
+                    <md-error>Password is invalid</md-error>
+                </md-input-container>
+                <div class="login-button">
+                    <button md-raised-button color="accent" type="submit"
+                        [disabled]="!loginForm.form.valid || loading">Login</button>
+
+
+                    <div class="password-links">
+                        <a href="" class="password-help">Forgot Password</a>
+                    </div>
+                </div>
+            </form>
+            <div fxLayout="row" fxLayoutAlign="space-around center" >
+                <md-spinner *ngIf='loading' [strokeWidth]="5" class="login-spinner" ></md-spinner>
+            </div>
+
+
+        </md-card>
+
+      </div>
+</div>
