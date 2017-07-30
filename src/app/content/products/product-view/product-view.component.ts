@@ -9,6 +9,7 @@ import {MD_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
+  
   isEdit: boolean;
   name: Name;
   constructor(@Inject(MD_DIALOG_DATA) public data: any) {

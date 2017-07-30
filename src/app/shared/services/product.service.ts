@@ -73,7 +73,7 @@ shouldIfetchNew(): boolean {
     const currentTime = new Date();
     const hourDifference = Math.floor((currentTime.getSeconds() - this.lastFetchTime.getSeconds()) / 36e5);
     console.log(hourDifference);
-    if (hourDifference > 1) {
+    if (hourDifference >= 1) {
       return true;
     }else {
       return false;

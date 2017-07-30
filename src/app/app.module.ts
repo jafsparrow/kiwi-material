@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 // importing http which are used in services
 import { HttpModule } from '@angular/http';
 
-import { ChartModule } from 'angular2-chartjs';
+// import { ChartModule } from 'angular2-chartjs';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // local modules.
 import { MaterialDesignModule } from './material-design.module';
 import { ContentModule } from './content/content.module';
-
 import { AppRoutingModule } from './app-routing/app-routing.module';
 // services and guards.
 import { AuthenticationService } from './shared/services/authentication.service';
@@ -27,17 +27,9 @@ import { SidenavbarComponent } from './shared/components/sidenavbar/sidenavbar.c
 // ** smart components
 import { ContentComponent } from './content/content.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './content/dashboard/dashboard.component';
-// ** products
-// import { ProductsComponent } from './content/products/products.component';
-// import { ProductaddComponent } from './content/products/productadd/productadd.component';
-// import { ProductlistComponent } from './content/products/productlist/productlist.component';
-// import { ProductcategoriesComponent } from './content/products/productcategories/productcategories.component';
-// import { CategoryComponent } from './content/products/productcategories/category/category.component';
-// import { ProductViewComponent } from './content/products/product-view/product-view.component';
-// import { ProductEditComponent } from './content/products/product-edit/product-edit.component';
+// import { DashboardComponent } from './content/dashboard/dashboard.component';
 
-import { ProductsModule} from './content/products/products.module';
+
 
 
 @NgModule({
@@ -46,29 +38,20 @@ import { ProductsModule} from './content/products/products.module';
     ToolbarComponent,
     SidenavbarComponent,
     LoginComponent,
-    DashboardComponent,
-    // ProductsComponent,
     ContentComponent,
-    // ProductcategoriesComponent,
-    // ProductaddComponent,
-    // ProductlistComponent,
-    // CategoryComponent,
-    // ProductViewComponent,
-    // ProductEditComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     MaterialDesignModule,
     FormsModule,
     // local modules.
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    
     // http module
     HttpModule,
-    ChartModule,
-    ProductsModule,
+    ContentModule
  ],
   providers: [
     // auth service

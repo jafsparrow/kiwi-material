@@ -17,7 +17,8 @@ import {
         MdTableModule,
         MdTabsModule,
         MdSelectModule,
-        MdDialogModule
+        MdDialogModule,
+        MdSlideToggleModule
 
     } from '@angular/material';
 
@@ -38,7 +39,8 @@ import {
         MdTableModule,
         MdTabsModule,
         MdSelectModule,
-        MdDialogModule
+        MdDialogModule,
+        MdSlideToggleModule
   ],
   declarations: [],
   exports: [
@@ -56,7 +58,8 @@ import {
         MdTableModule,
         MdTabsModule,
         MdSelectModule,
-        MdDialogModule
+        MdDialogModule,
+        MdSlideToggleModule
 
   ]
 })

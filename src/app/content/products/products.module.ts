@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { MaterialDesignModule } from '../../material-design.module';
 
 
@@ -21,8 +21,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     RouterModule,
     MaterialDesignModule,
     FormsModule,
-    FlexLayoutModule
-    
+    FlexLayoutModule,
   ],
   declarations: [
     ProductsComponent,

@@ -1,56 +1,71 @@
 <md-card>
   <md-card-title>Add a New Product</md-card-title>
+  <md-error *ngFor="let error of errors">
+    {{ error }}
+  </md-error>
   <div style="font-family: 'roboto'; color: red;">{{ error }}</div>
   <form #productAddform="ngForm" (ngSubmit)="addProduct(productAddform.value)">
-
-  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutAlign="space-between" fxLayoutWrap>
-        <div fxFlex class="product-form-section">
-            <div fxLayout="column">
-              <md-input-container  >
-                <input mdInput placeholder="Product Name" name="product_name" ngModel required>
-              </md-input-container>
-
-              <md-input-container  >
-                  <input mdInput placeholder="Barcode" name="product_barcode" ngModel required>
-              </md-input-container>
-              <md-input-container  >
-                  <input mdInput placeholder="Image Link" name="picture_url" ngModel required>
-              </md-input-container>
-              <md-select placeholder="Favorite food">
-                <md-option *ngFor="let food of foods" value="food.value">
-                  {{ food.viewValue }}
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutAlign="space-between" fxLayoutWrap>
+      <div fxFlex class="product-form-section">
+          <div fxLayout="column">
+            <md-input-container  >
+              <input mdInput placeholder="Product Name" name="product_name" ngModel required>
+            </md-input-container>
+            <md-input-container  >
+                <input mdInput placeholder="Barcode" name="sku" ngModel required>
+            </md-input-container>
+            <md-input-container  >
+                <input mdInput placeholder="Image Link" name="picture_url" ngModel required>
+            </md-input-container>
+            
+              <md-select  placeholder="Category" name="category" multiple="true" floatPlaceholder="never" ngModel>
+                <md-option *ngFor="let category of categories" value="{{category.id}}">
+                  {{ category.category_name }}
                 </md-option>
               </md-select>
-            </div>
-        </div>
+            
+            
 
+             <md-select placeholder="Color" name="available_colors"  floatPlaceholder="never" ngModel>
+              <md-option *ngFor="let color of availableColors" value="{{color.id}}">
+                {{ color.description }}
+              </md-option>
+            </md-select>
 
-        <div fxFlex class="product-form-section">
-          <div fxLayout="column">
-            <md-input-container >
-              <textarea mdInput placeholder="Product Description" name="product_description"></textarea>
-            </md-input-container>
-            <md-input-container>
-              <input mdInput placeholder="SKU">
-            </md-input-container>
-
-            <md-input-container >
-              <input mdInput placeholder="MRP" type="number">
-            </md-input-container>
-
-
+             <md-select placeholder="Size" name="available_size" floatPlaceholder="never" ngModel>
+              <md-option *ngFor="let size of availableSizes" value="{{size.id}}">
+                {{ size.description }}
+              </md-option>
+            </md-select>
           </div>
+      </div> <!--- end of first form section -->
 
+      <div fxFlex class="product-form-section">
+        <div fxLayout="column">
+
+          <md-input-container >
+            <textarea mdInput placeholder="Product Description" name="product_description" ngModel required></textarea>
+          </md-input-container>
+          <md-input-container >
+            <input mdInput placeholder="MRP" type="number"  name="msrp" ngModel required>
+          </md-input-container>
+
+          <md-slide-toggle ngModel name="discount"
+              class="example-margin"
+              color="warn"
+              checked="true"
+              [disabled]="disabled">
+            Discount Allowed
+          </md-slide-toggle> 
+<!-- 
+                        "discount": 1,
+              "product_available": 0,
+              "discount_available": 1, -->
         </div>
-  </div>
-
-  <div fxLayout="row" fxLayoutAlign="end">
-
-        <button [disabled]="!productAddform.form.valid" md-raised-button type="submit" color="accent">Submit</button>
-
-  </div>
-</form>
-
-<!-- {{ productAddform | json}} -->
-
+      </div> <!-- end of second form section -->
+    </div> <!-- end of both the above section wrapper --> 
+    <div fxLayout="row" fxLayoutAlign="end">
+          <button [disabled]="!productAddform.form.valid" md-raised-button type="submit" color="accent">Submit</button>
+    </div>
+  </form><!-- end of form -->
 </md-card>

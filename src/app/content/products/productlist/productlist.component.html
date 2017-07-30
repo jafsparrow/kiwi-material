@@ -1,7 +1,7 @@
 <md-card>
+  <md-tab-group>
+    <md-tab label="Products">
 
-<md-tab-group>
-  <md-tab label="Products">
     <md-card>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutWrap>
           <md-card-title fxFlex="50%">Available Products {{ products.length}}</md-card-title>
@@ -15,6 +15,14 @@
             </md-input-container>
 
           </form>
+          <md-slide-toggle
+              class="example-margin"
+              color="blue"
+              checked="true"
+              [disabled]="disabled">
+            List View
+          </md-slide-toggle> 
+
           <div class="">
             <button (click)="goToAddProduct()" md-raised-button color="accent">Add New Product</button>
 
@@ -26,29 +34,6 @@
           <md-spinner *ngIf='loading && !errorOnfetch' [strokeWidth]="5" class="login-spinner" ></md-spinner>
           <md-error *ngIf='errorOnfetch'>Oops, Couldn't connect to server.! check your connection</md-error>
       </div>
-
-      <!-- <table *ngIf='!loading' class="mdl-data-table local_class">
-        <thead>
-          <tr>
-            <th class="">Product Name</th>
-            <th>Product Description</th>
-            <th>Availabilty</th>
-            <th>Sku</th>
-          </tr>
-
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of products">
-            <td>
-              <a href="#">{{ product.product_name}}</a>
-            </td>
-            <td>{{ product.product_description }}</td>
-            <td>{{ product.product_available }}</td>
-            <td>{{ product.sku }}</td>
-          </tr>
-        </tbody>
-      </table> -->
-
       <div *ngIf='!loading' fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start" fxLayoutWrap>
         <div *ngFor="let product of products" class="product-card-container" fxFlex="20%" >
           <md-card class="product-card">

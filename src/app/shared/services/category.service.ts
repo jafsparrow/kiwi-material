@@ -29,4 +29,26 @@ export class CategoryService {
            });
    }
 
+  getAvailableSizes(): Observable<any> {
+      // add authorization header with jwt token
+      const headers = new Headers({ 'Content-Type': 'application/json',
+                                  'Authorization': 'Bearer ' + this.currentUser.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.get('https://kiwidist.herokuapp.com/product/sizes/', options)
+          .map((response: Response) => {
+          return response.json();
+          });
+  }
+
+  getAvailableColours(): Observable<any> {
+      // add authorization header with jwt token
+      const headers = new Headers({ 'Content-Type': 'application/json',
+                                  'Authorization': 'Bearer ' + this.currentUser.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.get('https://kiwidist.herokuapp.com/product/colors/', options)
+          .map((response: Response) => {
+          return response.json();
+          });
+  }
+
 }

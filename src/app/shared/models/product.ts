@@ -1,4 +1,4 @@
-// import { Stock } from './stock';
+import { Stock } from './stock';
 // import { Category } from './category';
 
 export class Product {
@@ -15,6 +15,6 @@ export class Product {
         picture_url: string;
         ranking: number;
         note: string;
-        // categories: Category[];
-        // stock_details: Stock[];
+        categories: number[];
+        stock_details: Stock[];
 }

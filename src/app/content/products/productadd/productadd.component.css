@@ -2,3 +2,12 @@
   padding: 10px;
   /*border: 2px dotted red;*/
 }
+
+md-select {
+  margin-bottom: 20px;
+  /* font-size: 5px; */
+}
+
+md-select:last-child {
+  margin-bottom: 0px;
+}
