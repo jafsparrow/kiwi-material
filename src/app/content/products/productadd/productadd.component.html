@@ -3,7 +3,7 @@
   <md-error *ngFor="let error of errors">
     {{ error }}
   </md-error>
-  <div style="font-family: 'roboto'; color: red;">{{ error }}</div>
+  <!-- <div style="font-family: 'roboto'; color: red;">{{ error }}</div> -->
   <form #productAddform="ngForm" (ngSubmit)="addProduct(productAddform.value)">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutAlign="space-between" fxLayoutWrap>
       <div fxFlex class="product-form-section">
@@ -54,7 +54,7 @@
               class="example-margin"
               color="warn"
               checked="true"
-              [disabled]="disabled">
+              disabled="false">
             Discount Allowed
           </md-slide-toggle> 
 <!-- 

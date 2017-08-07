@@ -85,7 +85,7 @@ newproduct = {
       errors => {
         console.log('error in feaching available size data');
         // this.errors.push('Error in fetching available product sizes');
-        console.log(this.errors);
+        // console.log(this.errors);
       });
   }
 
