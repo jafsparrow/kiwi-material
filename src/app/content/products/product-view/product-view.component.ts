@@ -13,7 +13,7 @@ export class ProductViewComponent implements OnInit {
   isEdit: boolean;
   name: Name;
   constructor(@Inject(MD_DIALOG_DATA) public data: any) {
-      console.log(data);
+      //console.log(data);
    }
 
   ngOnInit() {

@@ -15,9 +15,12 @@ import { ProductViewComponent } from '../product-view/product-view.component';
   styleUrls: ['./productlist.component.css']
 })
 export class ProductlistComponent implements OnInit {
+  
   products = [];
   loading = false;
   errorOnfetch = false;
+  productToSearch: string;
+  filteredProducts = [];
   constructor(private _productservice: ProductService,
               private _router: Router,
               private _activatedRoute: ActivatedRoute,
@@ -30,6 +33,7 @@ export class ProductlistComponent implements OnInit {
         result => {
         this.loading = false;
         this.products = result;
+        this.assignCopy();
 
         },
         error => {
@@ -40,13 +44,27 @@ export class ProductlistComponent implements OnInit {
 
   }
 
+  assignCopy() {
+    this.filteredProducts = Object.assign([], this.products);
+  }
 
+  filterProducts(value) {
+    if (!value) {
+      this.assignCopy();
+    }
+
+    this.filteredProducts = Object.assign([], this.products).filter (
+      item => item.product_name.toLowerCase().indexOf(value.toLowerCase()) > -1
+    )
+
+    console.log(this.filteredProducts.length);
+  }
   goToAddProduct(){
     // there are two ways to do it, give the full URL or realtive url
     // for full URL need Router to be injected. see blow - the code
     // this._router.navigate(['home/products/add']);
     // for the relative way, we need activated router to be injected and navigate to relative path way.
-    this._router.navigate(["../add"], { relativeTo: this._activatedRoute });
+    this._router.navigate(['../add'], { relativeTo: this._activatedRoute });
   }
 
   openViewDailog(item) {

@@ -13,6 +13,7 @@ import { ProductcategoriesComponent } from './productcategories/productcategorie
 import { CategoryComponent } from './productcategories/category/category.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductCardComponent } from './product-view/product-card/product-card.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ProductlistComponent,
     CategoryComponent,
     ProductViewComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ProductCardComponent
   ],
   exports: [
     ProductsComponent,

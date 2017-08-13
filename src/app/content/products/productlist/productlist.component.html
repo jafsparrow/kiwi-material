@@ -5,16 +5,17 @@
     <md-card>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutWrap>
           <md-card-title fxFlex="50%">Available Products {{ products.length}}</md-card-title>
-          <form >
+          
             <md-input-container>
 
                   <input mdInput placeholder="Search for product"
-                      name="search_input">
+                      [(ngModel)]="productToSearch"
+                      #searchInput
+                      (input)="filterProducts(searchInput.value)">
                   <!--<md-hint>Please Enter your email</md-hint>-->
                   <!-- <md-error>Email is required.</md-error> -->
             </md-input-container>
 
-          </form>
           <md-slide-toggle
               class="example-margin"
               color="blue"
@@ -35,7 +36,8 @@
           <md-error *ngIf='errorOnfetch'>Oops, Couldn't connect to server.! check your connection</md-error>
       </div>
       <div *ngIf='!loading' fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start" fxLayoutWrap>
-        <div *ngFor="let product of products" class="product-card-container" fxFlex="20%" >
+        <div *ngFor="let product of filteredProducts" class="product-card-container" fxFlex="20%" >
+          
           <md-card class="product-card">
             <md-card-header>
               <md-card-title>{{ product.product_name}}</md-card-title>
