@@ -57,7 +57,7 @@ export class ProductlistComponent implements OnInit {
       item => item.product_name.toLowerCase().indexOf(value.toLowerCase()) > -1
     )
 
-    console.log(this.filteredProducts.length);
+    // console.log(this.filteredProducts.length);
   }
   goToAddProduct(){
     // there are two ways to do it, give the full URL or realtive url
