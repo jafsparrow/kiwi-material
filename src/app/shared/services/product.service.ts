@@ -1,3 +1,4 @@
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 // http module to communicate with server
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
@@ -7,10 +8,13 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 
+
 // ***************************************************//
 // Login: if the last fetch was before an hour, forcefull pull the data from server.
 @Injectable()
 export class ProductService {
+
+  remoteURL = environment.remoteURL;
   public products: any;
   token: string ;
   currentUser: any;
@@ -55,7 +59,7 @@ export class ProductService {
   const headers = new Headers({ 'Content-Type': 'application/json',
                                 'Authorization': 'Bearer ' + this.currentUser.token });
   const options = new RequestOptions({ headers: headers });
-  return this.http.get('https://kiwidist.herokuapp.com/product/products/', options)
+  return this.http.get(`${this.remoteURL}/product/products/`, options)
     .map((response: Response) => {
       return response.json();
     })
@@ -137,7 +141,7 @@ shouldIfetchNew(): boolean {
         const headers = new Headers({ 'Content-Type': 'application/json',
                                      'Authorization': 'Bearer ' + this.currentUser.token });
         const options = new RequestOptions({ headers: headers });
-        return this.http.post('https://kiwidist.herokuapp.com/product/products/', JSON.stringify(newproduct), options)
+        return this.http.post(`${this.remoteURL}/product/products/`, JSON.stringify(newproduct), options)
         		.map((res:Response) => res.json())
         		.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 

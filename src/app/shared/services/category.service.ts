@@ -1,3 +1,4 @@
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
@@ -9,6 +10,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CategoryService {
+    remoteURL = environment.remoteURL
 
   token: string ;
   currentUser: any;
@@ -23,7 +25,7 @@ export class CategoryService {
        const headers = new Headers({ 'Content-Type': 'application/json',
                                     'Authorization': 'Bearer ' + this.currentUser.token });
        const options = new RequestOptions({ headers: headers });
-       return this.http.get('https://kiwidist.herokuapp.com/product/categories/', options)
+       return this.http.get(`${this.remoteURL}/product/categories/`, options)
            .map((response: Response) => {
             return response.json();
            });
@@ -34,7 +36,7 @@ export class CategoryService {
       const headers = new Headers({ 'Content-Type': 'application/json',
                                   'Authorization': 'Bearer ' + this.currentUser.token });
       const options = new RequestOptions({ headers: headers });
-      return this.http.get('https://kiwidist.herokuapp.com/product/sizes/', options)
+      return this.http.get(`${this.remoteURL}/product/sizes/`, options)
           .map((response: Response) => {
           return response.json();
           });
@@ -45,7 +47,7 @@ export class CategoryService {
       const headers = new Headers({ 'Content-Type': 'application/json',
                                   'Authorization': 'Bearer ' + this.currentUser.token });
       const options = new RequestOptions({ headers: headers });
-      return this.http.get('https://kiwidist.herokuapp.com/product/colors/', options)
+      return this.http.get(`${this.remoteURL}/product/colors/`, options)
           .map((response: Response) => {
           return response.json();
           });

@@ -6,12 +6,16 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../../environments/environment';
+
+
 @Injectable()
 export class AuthenticationService {
+  remoteURL = environment.remoteURL;
   public token: boolean;
   constructor(private http: Http) {
   //  setting tocken if available in local storage
-    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
   }
 
@@ -21,7 +25,7 @@ export class AuthenticationService {
       const body = JSON.stringify({email: email, password: password });
       const headers = new Headers({ 'Content-Type': 'application/json' });
       const options = new RequestOptions({ headers: headers });
-      return this.http.post('https://kiwidist.herokuapp.com/account/login/', body, options) //, headers)
+      return this.http.post(`${this.remoteURL}/account/login/`, body, options) //, headers)
           .map((response: Response) => {
             // login success if jwt is in the response.
             const token = response.json().token; // && response.json.token;
